@@ -23,11 +23,12 @@ public class CarRentalSystem {
     }
 
     public void rentCar(Car car,Customer customer,int days){
-        if(car.isAvailable()){
+        if(car.isAvailable())
+        {
             car.rent();
             rentals.add(new Rental(car,customer,days));
         }
-        else {
+        else{
             System.out.println("Car is not available to rent");
         }
     }
@@ -35,16 +36,19 @@ public class CarRentalSystem {
     public void returnCar(Car car){
         car.returnCar();
         Rental rentalToRemove = null;
-        for (Rental rental : rentals){
+        for (Rental rental : rentals)
+        {
             if(rental.getCar()== car){
                 rentalToRemove=rental;
                 break;
             }
         }
-        if(rentalToRemove != null){
+        if(rentalToRemove != null)
+        {
             rentals.remove(rentalToRemove);
 
-        }else {
+        }else
+        {
             System.out.println("Car was not rented.");
         }
 
